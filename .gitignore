@@ -74,3 +74,4 @@ fastlane/readme.md
 /build
 /captures
 .externalNativeBuild
+node_modules

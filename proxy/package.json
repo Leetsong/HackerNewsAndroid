@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "Hacker News Proxy",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "nohup node proxy.js &",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-proxy-middleware": "^0.18.0",
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-compose": "^4.1.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa2-connect": "^1.0.2"
+  }
+}

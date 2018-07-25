@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_top_stories"
+            android:title="@string/navigation_item_top_stories" />
+        <item
+            android:id="@+id/item_ask_stories"
+            android:title="@string/navigation_item_ask_stories" />
+        <item
+            android:id="@+id/item_show_stories"
+            android:title="@string/navigation_item_show_stories" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_best_stories"
+            android:title="@string/navigation_item_best_stories" />
+        <item
+            android:id="@+id/item_newest_stories"
+            android:title="@string/navigation_item_newest_stories" />
+    </group>
+
+</menu>

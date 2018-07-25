@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">HackerNews</string>
+    <string name="navigation_item_top_stories">Hacker News</string>
+    <string name="navigation_item_ask_stories">Ask HN</string>
+    <string name="navigation_item_show_stories">Show HN</string>
+    <string name="navigation_item_best_stories">Best</string>
+    <string name="navigation_item_newest_stories">Newest</string>
+    <string name="tb_title_top_stories">Hacker News</string>
+    <string name="tb_title_ask_stories">Ask HN</string>
+    <string name="tb_title_show_stories">Show HN</string>
+    <string name="tb_title_best_stories">Best</string>
+    <string name="tb_title_newest_stories">Newest</string>
+
 </resources>

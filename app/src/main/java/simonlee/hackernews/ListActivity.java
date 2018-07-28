@@ -102,7 +102,7 @@ public class ListActivity extends BaseActivity
             case R.id.item_newest_stories:
                 Toast.makeText(this, "NEWEST", Toast.LENGTH_SHORT).show(); break;
             case R.id.item_best_stories:
-                Toast.makeText(this, "BEST", Toast.LENGTH_SHORT).show(); break;
+                routeTo(BestStoriesFragment.class); break;
         }
 
         return false;

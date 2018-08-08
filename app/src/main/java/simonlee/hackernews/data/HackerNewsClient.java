@@ -3,21 +3,23 @@ package simonlee.hackernews.data;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import simonlee.hackernews.models.HackerNewsItem;
-import simonlee.hackernews.services.ApiClient;
+import simonlee.hackernews.services.ApiManager;
 import simonlee.hackernews.services.HackerNewsService;
 
 public class HackerNewsClient implements ItemManager {
 
+    private ApiManager apiManager;
+
+    public HackerNewsClient(ApiManager apiManager) { this.apiManager = apiManager; }
+
     @Override
     public Observable<List<HackerNewsItem>> getStories(@StoryType String type) {
-        HackerNewsService hackerNewsService = ApiClient.getHackerNewsServices();
+        HackerNewsService hackerNewsService = apiManager.getHackerNewsServices();
         try {
             String methodName = "fetch" + type + "Stories";
             Method m = hackerNewsService.getClass().getMethod(methodName);
@@ -37,7 +39,7 @@ public class HackerNewsClient implements ItemManager {
 
     @Override
     public Observable<? extends HackerNewsItem.Item> getItem(Integer id) {
-        HackerNewsService hackerNewsService = ApiClient.getHackerNewsServices();
+        HackerNewsService hackerNewsService = apiManager.getHackerNewsServices();
         return hackerNewsService
                 .fetchItem(id)
                 .subscribeOn(Schedulers.io());

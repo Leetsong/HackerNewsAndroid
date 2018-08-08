@@ -1,20 +1,30 @@
 package simonlee.hackernews;
 
 import android.app.Application;
-import android.content.Context;
 
 
 public class AppContext extends Application {
 
-    private static Context context;
+    // the Context
+    private static AppContext appContext;
+    // the Component
+    private AppComponent appComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        this.context = getApplicationContext();
+        appContext = this;
+        appComponent = DaggerAppComponent
+                .builder()
+                .appModule(new AppModule(this))
+                .build();
     }
 
-    public static Context getContext() {
-        return context;
+    public AppComponent getAppComponent() {
+        return appComponent;
+    }
+
+    public static AppContext getAppContext() {
+        return appContext;
     }
 }

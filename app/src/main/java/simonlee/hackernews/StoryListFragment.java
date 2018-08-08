@@ -10,21 +10,35 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import simonlee.hackernews.adapters.HackerNewsItemAdapter;
-import simonlee.hackernews.data.HackerNewsClient;
 import simonlee.hackernews.data.ItemManager;
 import simonlee.hackernews.models.HackerNewsItem;
 
 public abstract class StoryListFragment extends ListFragment<HackerNewsItem>
         implements BaseQuickAdapter.OnItemClickListener, TitledInterface {
 
+    // the app context
+    @Inject AppContext appContext;
     // the item manager
-    private ItemManager itemManager = new HackerNewsClient();
+    @Inject ItemManager itemManager;
 
     // the cache
     private final int PAGE = 15;
     List<HackerNewsItem> cachedList = new LinkedList<>();
+
+    @Override
+    public void inject(AppComponent appComponent) {
+        appComponent.inject(this);
+    }
+
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        // TODO - Item Activity
+        Toast.makeText(appContext, "Clicked at " + position, Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     protected BaseQuickAdapter onCreateAdapter() {
@@ -65,13 +79,6 @@ public abstract class StoryListFragment extends ListFragment<HackerNewsItem>
         } else {
             adapter.loadMoreEnd(true);
         }
-    }
-
-    @Override
-    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        // TODO - Item Activity
-        Toast.makeText(
-                AppContext.getContext(), "Clicked at " + position, Toast.LENGTH_SHORT).show();
     }
 
     @Override

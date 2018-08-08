@@ -2,7 +2,6 @@ package simonlee.hackernews;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import simonlee.hackernews.models.HackerNewsItem;
 
-public abstract class ListFragment<T> extends Fragment
+public abstract class ListFragment<T> extends BaseFragment
         implements SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
 
     @BindView(R.id.rv_item_list)

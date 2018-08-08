@@ -45,8 +45,10 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     compile 'com.jakewharton:butterknife:8.8.1'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    compile 'com.google.dagger:dagger:2.16'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

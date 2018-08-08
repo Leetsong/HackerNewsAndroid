@@ -9,12 +9,12 @@ public class TopStoriesFragment extends StoryListFragment {
     }
 
     @Override
-    protected String getStoryType() {
-        return ItemManager.STORY_TYPE_TOP;
+    public String getDisplayedTitle() {
+        return AppContext.getAppContext().getString(R.string.tb_title_top_stories);
     }
 
     @Override
-    public String getDisplayedTitle() {
-        return AppContext.getContext().getString(R.string.tb_title_top_stories);
+    protected String getStoryType() {
+        return ItemManager.STORY_TYPE_TOP;
     }
 }

@@ -13,7 +13,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -95,12 +94,11 @@ public class ListActivity extends BaseActivity
             case R.id.item_top_stories:
                 routeTo(TopStoriesFragment.class); break;
             case R.id.item_ask_stories:
-                Toast.makeText(this, "ASK", Toast.LENGTH_SHORT).show();
-                break;
+                routeTo(AskStoriesFragment.class); break;
             case R.id.item_show_stories:
-                Toast.makeText(this, "SHOW", Toast.LENGTH_SHORT).show(); break;
+                routeTo(ShowStoriesFragment.class); break;
             case R.id.item_newest_stories:
-                Toast.makeText(this, "NEWEST", Toast.LENGTH_SHORT).show(); break;
+                routeTo(NewestStoriesFragment.class); break;
             case R.id.item_best_stories:
                 routeTo(BestStoriesFragment.class); break;
         }

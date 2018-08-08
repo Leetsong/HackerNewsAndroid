@@ -1,6 +1,5 @@
 package simonlee.hackernews.services;
 
-
 public interface ApiManager {
 
     /**

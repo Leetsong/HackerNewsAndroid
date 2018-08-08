@@ -1,6 +1,5 @@
 package simonlee.hackernews.data;
 
-
 import android.support.annotation.StringDef;
 
 import java.lang.annotation.Retention;

@@ -1,6 +1,5 @@
 package simonlee.hackernews;
 
-
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.Toast;
@@ -19,6 +18,8 @@ import simonlee.hackernews.models.HackerNewsItem;
 
 public abstract class StoryListFragment extends ListFragment<HackerNewsItem>
         implements BaseQuickAdapter.OnItemClickListener, TitledInterface {
+
+    // TODO - Cancel rx when onPause()
 
     // the app context
     @Inject AppContext appContext;
@@ -96,7 +97,8 @@ public abstract class StoryListFragment extends ListFragment<HackerNewsItem>
     @Override
     protected void onRefreshError(Throwable throwable) {
         super.onRefreshError(throwable);
-        // TODO - refresh error
+        // TODO - refreshing error
+        Toast.makeText(appContext, throwable.getMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @ItemManager.StoryType

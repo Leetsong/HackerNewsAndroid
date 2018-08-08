@@ -2,7 +2,6 @@ package simonlee.hackernews;
 
 import android.app.Application;
 
-
 public class AppContext extends Application {
 
     // the Context

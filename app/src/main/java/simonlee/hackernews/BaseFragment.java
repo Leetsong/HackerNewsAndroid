@@ -3,7 +3,6 @@ package simonlee.hackernews;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
-
 public abstract class BaseFragment
         extends Fragment
         implements Injectable {

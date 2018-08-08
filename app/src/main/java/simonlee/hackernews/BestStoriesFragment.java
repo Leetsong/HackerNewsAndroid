@@ -1,6 +1,5 @@
 package simonlee.hackernews;
 
-
 import simonlee.hackernews.data.ItemManager;
 
 public class BestStoriesFragment extends StoryListFragment {

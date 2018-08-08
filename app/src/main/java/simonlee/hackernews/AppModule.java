@@ -1,6 +1,5 @@
 package simonlee.hackernews;
 
-
 import javax.inject.Singleton;
 
 import dagger.Module;

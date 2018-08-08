@@ -188,6 +188,7 @@ public abstract class ListFragment<T> extends BaseFragment
      * @param throwable error thrown
      */
     protected void onRefreshError(Throwable throwable) {
+        throwable.printStackTrace();
         srlRefresher.setRefreshing(false);
     }
 }
